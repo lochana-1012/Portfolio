@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOCHANA B - Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      background-color: #f3f4f6;
+      line-height: 1.5;
+      padding: 40px 20px;
+    }
+
+    .print-banner {
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      background-color: #0f172a;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    }
+
+    .print-btn {
+      background-color: #10b981;
+      color: black;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .print-btn:hover {
+      background-color: #059669;
+    }
+
+    .resume-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 50px;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      border-radius: 4px;
+      min-height: 1050px;
+    }
+
+    header {
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .header-left h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      color: #111827;
+      text-transform: uppercase;
+    }
+
+    .header-left p {
+      font-size: 14px;
+      color: #4b5563;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 12px;
+      color: #374151;
+    }
+
+    .header-right p {
+      margin-bottom: 4px;
+    }
+
+    .header-right a {
+      color: #111827;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .header-right a:hover {
+      text-decoration: underline;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-cols: 7fr 5fr;
+      gap: 30px;
+    }
+
+    .left-col, .right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    h2.sec-title {
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #111827;
+      border-bottom: 1px solid #111827;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    .item {
+      margin-bottom: 15px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .item-date {
+      font-size: 12px;
+      font-weight: 600;
+      color: #4b5563;
+      font-family: monospace;
+    }
+
+    .item-sub {
+      font-size: 12px;
+      font-weight: 600;
+      color: #10b981;
+      margin-bottom: 6px;
+    }
+
+    .item ul {
+      padding-left: 16px;
+      font-size: 12px;
+      color: #374151;
+    }
+
+    .item li {
+      margin-bottom: 4px;
+    }
+
+    .profile-desc {
+      font-size: 12px;
+      color: #374151;
+      text-align: justify;
+    }
+
+    .skills-group {
+      margin-bottom: 12px;
+    }
+
+    .skills-group-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #111827;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .skills-list {
+      font-size: 12px;
+      color: #374151;
+    }
+
+    .cert-item, .ach-item {
+      font-size: 12px;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+
+    .cert-item strong, .ach-item strong {
+      color: #111827;
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+      .print-banner {
+        display: none;
+      }
+      .resume-container {
+        box-shadow: none;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-banner">
+    <div>
+      <span style="font-weight: 600; font-size: 14px;">Print layout ready. Save as PDF in the printing options.</span>
+    </div>
+    <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <div class="resume-container">
+    <header>
+      <div class="header-left">
+        <h1>Lochana B</h1>
+        <p>Web Developer | Problem Solver | Tech Enthusiast</p>
+      </div>
+      <div class="header-right">
+        <p>+91 8870577912</p>
+        <p><a href="mailto:chanarchu2005@gmail.com">chanarchu2005@gmail.com</a></p>
+        <p>7, NSK Nagar Villupuram</p>
+        <p><a href="https://linkedin.com/in/lochana-b" target="_blank">linkedin.com/in/lochana-b</a></p>
+      </div>
+    </header>
+
+    <div class="section-grid">
+      
+      <!-- Left Column -->
+      <div class="left-col">
+        
+        <!-- Profile Section -->
+        <section>
+          <h2 class="sec-title">Profile</h2>
+          <p class="profile-desc">
+            A motivated and forward-thinking woman aspiring to achieve her life goals and enlighten her future. A quick learner with a wide mindset, strong time management skills, and high integrity. Passionate about technology, problem-solving, and creating meaningful solutions through innovation.
+          </p>
+        </section>
+
+        <!-- Experience Section -->
+        <section>
+          <h2 class="sec-title">Intern Experience</h2>
+          
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Thirsty Crowz</span>
+              <span class="item-date">2024 - 2025</span>
+            </div>
+            <div class="item-sub">Brand Visual & Layout Intern</div>
+            <ul>
+              <li>Designed brand visuals and marketing layouts using Canva and Adobe tools.</li>
+              <li>Contributed to maintaining a consistent visual identity across social and digital channels.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Internpre Company</span>
+              <span class="item-date">2023 - 2024</span>
+            </div>
+            <div class="item-sub">Front-End Developer Intern (Online)</div>
+            <ul>
+              <li>Built and deployed responsive, cross-browser web pages using HTML, CSS, and JavaScript.</li>
+              <li>Improved page load performance and mobile usability by 20%.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Ether Infotech</span>
+              <span class="item-date">2023 - 2024</span>
+            </div>
+            <div class="item-sub">Data Analyst & ML Intern</div>
+            <ul>
+              <li>Analyzed and visualized real-world datasets using Python and Power BI.</li>
+              <li>Built and optimized machine learning models to improve prediction accuracy.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+          <h2 class="sec-title">Projects</h2>
+          
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Smart Stick for Blind People</span>
+              <span class="item-date">Sep 2023 - Feb 2024</span>
+            </div>
+            <ul>
+              <li>Developed an IoT-based assistive device for visually impaired users integrating ultrasonic sensors, vibration feedback, and Arduino to enable real-time obstacle detection.</li>
+              <li>Technology: Arduino, Ultrasonic Sensor, Buzzer, Vibration Motor, Embedded C, IoT</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Vital view: Real Time QR Records</span>
+              <span class="item-date">Aug 2024 - Jan 2025</span>
+            </div>
+            <ul>
+              <li>A real-time QR-based secure record management system designed to store, verify, and access data instantly, ensuring fast and safe information handling.</li>
+              <li>Technology: Python, JavaScript, SQL, Flask/Django, HTML, CSS</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Smart Water Quality System</span>
+              <span class="item-date">In Progress</span>
+            </div>
+            <ul>
+              <li>A real-time IoT system that checks water quality metrics (pH, turbidity, temperature) using sensor arrays and pushes automated alerts.</li>
+              <li>Technology: Arduino, pH & Turbidity Sensors, Temperature Sensor, IoT Cloud, Embedded C</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-col">
+        
+        <!-- Education Section -->
+        <section>
+          <h2 class="sec-title">Education</h2>
+          
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title" style="font-size: 13px;">SNS College of Engineering</span>
+              <span class="item-date">2023 - 2027</span>
+            </div>
+            <div style="font-size: 11px; font-weight: 600; color: #4b5563;">Bachelor of Engineering</div>
+            <div style="font-size: 11px; color: #4b5563; margin-bottom: 2px;">CSE (IoT, Cybersecurity including Blockchain)</div>
+            <div style="font-size: 12px; font-weight: 700; color: #10b981;">CGPA: 8.42</div>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title" style="font-size: 13px;">Government Model Girls School</span>
+              <span class="item-date">2022 - 2023</span>
+            </div>
+            <div style="font-size: 11px; font-weight: 600; color: #4b5563;">HSS State Board (Computer Science)</div>
+            <div style="font-size: 12px; font-weight: 700; color: #10b981;">Percentage: 79%</div>
+          </div>
+
+        </section>
+
+        <!-- Skills Section -->
+        <section>
+          <h2 class="sec-title">Skills</h2>
+          
+          <div class="skills-group">
+            <div class="skills-group-title">Programming</div>
+            <div class="skills-list">Python, HTML/CSS, JavaScript, SQL, React.js</div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Tools</div>
+            <div class="skills-list">Arduino, Figma, Canva, VS Code, Git, Power BI, Excel</div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Others</div>
+            <div class="skills-list">Machine Learning, IoT Development, Scrum, JIRA</div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Soft Skills</div>
+            <div class="skills-list">Creativity, Problem Solving, Teamwork, Communication, Time Management, Quick Learner</div>
+          </div>
+
+        </section>
+
+        <!-- Certifications Section -->
+        <section>
+          <h2 class="sec-title">Certificates</h2>
+          <div class="cert-item"><strong>Cisco</strong> Networking Certification (2025)</div>
+          <div class="cert-item"><strong>Microsoft</strong> AI Fundamentals Associate (2025)</div>
+          <div class="cert-item"><strong>Prepinsta</strong> Git Certification (2025)</div>
+          <div class="cert-item"><strong>NPTEL</strong> Database Management System (2025)</div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section>
+          <h2 class="sec-title">Achievements</h2>
+          <div class="ach-item"><strong>3rd Place</strong> - Hackathon, Karunya University (2026)</div>
+          <div class="ach-item"><strong>2nd Place</strong> - Hackathon, Info Institute of Tech (2025)</div>
+          <div class="ach-item">Workshop Participation - Hindustan Institute of Tech & CIET</div>
+        </section>
+
+        <!-- Languages Section -->
+        <section>
+          <h2 class="sec-title">Languages</h2>
+          <div style="font-size: 12px; color: #374151;">
+            <p><strong>English</strong> - Good speaking ability</p>
+            <p><strong>Tamil</strong> - Native fluency</p>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Auto-open print dialog shortly after load
+    window.onload = function() {
+      setTimeout(function() {
+        window.print();
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
