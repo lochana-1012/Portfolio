@@ -74,7 +74,7 @@ export default function Navbar() {
           
           <a
             href="#contact"
-            className="px-5 py-2 rounded-lg text-xs font-semibold text-white border border-white/10 hover:border-cyber-green hover:shadow-[0_0_15px_rgba(57,255,20,0.2)] transition-all duration-300"
+            className="px-5 py-2 rounded-lg text-xs font-semibold text-white border border-white/10 hover:border-cyber-green hover:shadow-[0_0_15px_rgba(255,209,102,0.2)] transition-all duration-300"
           >
             Hire Me
           </a>

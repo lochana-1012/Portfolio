@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Award, ShieldAlert, Award as Trophy, Network, Calendar, ExternalLink } from 'lucide-react';
+import { Briefcase, Award, ShieldAlert, Award as Trophy, Network, Calendar, ExternalLink, X } from 'lucide-react';
 
 export default function Experience() {
+  const [activeCert, setActiveCert] = useState(null);
+
   const internships = [
     {
       company: "Thirsty Crowz",
@@ -28,10 +30,11 @@ export default function Experience() {
   ];
 
   const certifications = [
-    { name: "Cisco Networking Certification", issuer: "Cisco", year: "2025" },
-    { name: "Microsoft Certified Associate: AI Fundamentals", issuer: "Microsoft", year: "2025" },
-    { name: "GIT Certification", issuer: "Prepinsta", year: "2025" },
-    { name: "Database Management System", issuer: "NPTEL", year: "2025" }
+    { name: "Azure AI Fundamentals", issuer: "Microsoft", year: "2025", image: "cert-azure.png" },
+    { name: "GIT Certification", issuer: "Prepinsta", year: "2025", image: "cert-git.png" },
+    { name: "Database Management System", issuer: "NPTEL", year: "2025", image: "cert-dbms.png" },
+    { name: "Getting Started with Microsoft Excel", issuer: "Coursera", year: "2025", image: "cert-excel.png" },
+    { name: "Cisco Networking Certification", issuer: "Cisco", year: "2025", image: null }
   ];
 
   const achievements = [
@@ -104,10 +107,20 @@ export default function Experience() {
                   <motion.div
                     key={idx}
                     whileHover={{ scale: 1.02 }}
-                    className="glass-card p-4 rounded-xl border border-white/5 hover:border-block-purple/40 transition-all duration-300 flex flex-col justify-between"
+                    onClick={() => cert.image && setActiveCert(cert)}
+                    className={`glass-card p-4 rounded-xl border border-white/5 transition-all duration-300 flex flex-col justify-between ${
+                      cert.image ? 'cursor-pointer hover:border-block-purple/40 hover:shadow-[0_0_15px_rgba(138,43,226,0.15)]' : ''
+                    }`}
                   >
                     <div className="space-y-2">
-                      <span className="text-[10px] font-bold font-mono tracking-widest text-block-purple uppercase">{cert.issuer}</span>
+                      <div className="flex justify-between items-start gap-1 flex-wrap">
+                        <span className="text-[10px] font-bold font-mono tracking-widest text-block-purple uppercase">{cert.issuer}</span>
+                        {cert.image && (
+                          <span className="text-[9px] font-semibold text-cyber-green bg-cyber-green/10 border border-cyber-green/20 px-1.5 py-0.5 rounded flex items-center gap-1">
+                            <span className="w-1.5 h-1.5 rounded-full bg-cyber-green animate-pulse" /> View Certificate
+                          </span>
+                        )}
+                      </div>
                       <h4 className="font-semibold text-white text-xs sm:text-sm leading-snug tracking-wide">{cert.name}</h4>
                     </div>
                     <span className="text-[10px] font-mono text-gray-500 mt-3 align-bottom block">Issued: {cert.year}</span>
@@ -146,6 +159,42 @@ export default function Experience() {
         </div>
 
       </div>
+
+      {/* Certificate Viewer Modal */}
+      {activeCert && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setActiveCert(null)}
+        >
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="relative max-w-3xl w-full bg-dark-card border border-white/10 rounded-2xl overflow-hidden p-2 shadow-2xl"
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setActiveCert(null)}
+              className="absolute top-4 right-4 p-2 rounded-lg bg-black/60 hover:bg-black/90 text-white border border-white/10 transition-colors z-10"
+              aria-label="Close modal"
+            >
+              <X size={18} />
+            </button>
+            
+            <div className="p-4 flex flex-col gap-3">
+              <div className="border-b border-white/5 pb-2">
+                <span className="text-xs font-bold text-block-purple uppercase tracking-wider">{activeCert.issuer}</span>
+                <h4 className="text-white font-semibold text-base sm:text-lg">{activeCert.name}</h4>
+              </div>
+              <img 
+                src={`${import.meta.env.BASE_URL}${activeCert.image}`} 
+                className="w-full h-auto rounded-lg max-h-[70vh] object-contain bg-white/5 shadow-inner" 
+                alt={activeCert.name} 
+              />
+            </div>
+          </motion.div>
+        </div>
+      )}
     </section>
   );
 }

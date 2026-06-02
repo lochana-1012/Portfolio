@@ -131,7 +131,7 @@ export default function Contact() {
             {/* Social Grid */}
             <div className="flex gap-4 pt-4">
               <a
-                href="https://linkedin.com/in/lochana-b"
+                href="https://www.linkedin.com/in/lochana-babu/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/10 hover:shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-all duration-300 text-xs font-semibold"
@@ -144,7 +144,7 @@ export default function Contact() {
                 <span>LinkedIn</span>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/lochana-1012"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-white/5 bg-white/5 text-gray-400 hover:text-white hover:border-white/10 hover:shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-all duration-300 text-xs font-semibold"
